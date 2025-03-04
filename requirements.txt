@@ -1,4 +1,3 @@
 streamlit
 pandas
-random
 st-supabase-connection

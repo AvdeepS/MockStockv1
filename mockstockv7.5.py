@@ -130,7 +130,7 @@ ROUND_PASSWORDS = {
 }
 
 # ---- Login Screen ----
-st.title("Mock Stock Platform")
+st.title("Bulls v/s Borders")
 
 if st.session_state["user"] is None:
     st.subheader("🔐 Login")

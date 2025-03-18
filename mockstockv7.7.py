@@ -315,10 +315,7 @@ def calculate_positions(user_id):
     # Fetch all orders for the user from Supabase
     try:
         # Optimized query with specific columns and timeout
-        orders_response = conn.client.from_("orders") \
-            .select("id,user_id,security_type,quantity,price,order_type") \
-            .eq("user_id", user_id) \
-            .execute()  # 10-second timeout
+        orders_response = conn.client.from_("orders").select("*").eq("user_id", user_id).execute()  # 10-second timeout
         
         if not orders_response.data:
             return {}

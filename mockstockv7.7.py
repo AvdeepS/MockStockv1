@@ -318,7 +318,7 @@ def calculate_positions(user_id):
         orders_response = conn.client.from_("orders") \
             .select("id,user_id,security_type,quantity,price,order_type") \
             .eq("user_id", user_id) \
-            .execute(timeout=10)  # 10-second timeout
+            .execute()  # 10-second timeout
         
         if not orders_response.data:
             return {}
